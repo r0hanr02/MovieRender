@@ -21,7 +21,7 @@ const MovieCard = ({
   }, [title, year]);
 
   return (
-    <div className="md:flex bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+    <div className="md:flex bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 cursor-pointer">
       {/* Poster */}
       <div className="md:w-80 h-60 flex-shrink-0 ">
         {posterUrl ? (
@@ -29,7 +29,7 @@ const MovieCard = ({
             src={posterUrl}
             alt={title}
             className="w-full h-full object-cover 
-            object-center md:object-top"
+            object-center md:object-top hover:scale-110 transition-all"
           />
         ) : (
           <div className="w-full h-full bg-gray-700 flex items-center justify-center text-gray-400 font-bold">
