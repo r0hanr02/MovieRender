@@ -32,7 +32,7 @@ Auth / Infra: Firebase (optional, for secure API key handling)
 
 🚀 Getting Started
 1. Clone the repo
-git clone https://github.com/your-username/movierender.git
+git clone https://github.com/r0hanr02/MovieRender.git
 cd movierender
 
 2. Install dependencies
