@@ -13,12 +13,14 @@ import { toast, ToastContainer } from "react-toastify";
 import { chat } from "../service/AIModel";
 import SelectInput from "../components/custom/SelectInput";
 import Spinner from "../components/custom/Spinner"; // 🔹 Import spinner
+import { number } from "motion";
 
 const App = () => {
   const [selectedMood, setSelectedMood] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
+  const [number, setNumber] = useState(5);
   const [finalPrompt, setFinalPrompt] = useState("");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -36,7 +38,8 @@ const App = () => {
     const FinalAIPrompt = AIPrompt.replace("{mood}", selectedMood)
       .replace("{genre}", selectedGenre)
       .replace("{language}", selectedLanguage)
-      .replace("{release_year}", selectedYear);
+      .replace("{release_year}", selectedYear)
+      .replace("{number}", number);
 
     setFinalPrompt(FinalAIPrompt);
   };
@@ -146,6 +149,18 @@ const App = () => {
               placeholder="Select Year"
             />
           </div>
+          <label className="bg-white/10 backdrop-blur-md p-4 m-4 rounded-2xl border border-white/20 hover:border-amber-400 transition-all duration-300 font-bold w-full md:w-[63%] ">
+            How much movie you want us to recommend?
+            <input
+              className="w-full border-none rounded p-3  focus:ring-2 focus:ring-amber-400 outline-none font-normal"
+              type="number"
+              min={5}
+              max={50}
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
+              label="number"
+            />
+          </label>
 
           <button className="my-10 bg-amber-500 hover:bg-amber-400 text-gray-900 font-bold py-3 px-8 rounded-full text-lg shadow-xl transform hover:scale-105 transition-all duration-300">
             Search Recommended Movies

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/custom/Navbar";
 import Footer from "../components/custom/Footer";
 import MovieCard from "../components/custom/MovieCards";
+import Pagination from "../components/custom/Pagination";
 
 const ViewMovies = () => {
   const [movieData, setMovieData] = useState([]);
@@ -35,20 +36,7 @@ const ViewMovies = () => {
             No movies found. Try searching again.
           </p>
         ) : (
-          <div className="flex flex-col gap-6">
-            {movieData.map((movie, index) => (
-              <MovieCard
-                key={index}
-                title={movie.title}
-                genre={movie.genre}
-                imdb_rating={movie.imdb_rating}
-                where_to_watch={movie.where_to_watch}
-                year={movie.year}
-                why_recommended={movie.why_recommended}
-                poster={movie.poster}
-              />
-            ))}
-          </div>
+          <Pagination movieData={movieData} />
         )}
       </div>
 

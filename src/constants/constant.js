@@ -95,5 +95,4 @@ export const releaseYear = [
   { name: "Before 2000", value: "0-1999" },
 ];
 
-export const AIPrompt =
-  "You are an AI movie recommendation assistant. The user’s mood is '{mood}'. They prefer the genre '{genre}', language '{language}', and movies released after {release_year}. Recommend movies that match these preferences. Always return the results in valid JSON format with the following fields: title, year, genre, imdb_rating, why_recommended, where_to_watch. Do not include any explanations, markdown, or extra text.";
+export const AIPrompt = `You are an AI movie recommendation assistant. The user’s mood is '{mood}'. They prefer the genre '{genre}', language '{language}', and movies released after {release_year} give this {number} of movies. Recommend movies that match these preferences. Always return the results in valid JSON format with the following fields: title, year, genre, imdb_rating, why_recommended, where_to_watch. Do not include any explanations, markdown, or extra text.`;

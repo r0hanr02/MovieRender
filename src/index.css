@@ -3,7 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -120,11 +119,19 @@
   }
 }
 
-
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:  'Arial Narrow Bold', sans-serif;
+  font-family: "Arial Narrow Bold", sans-serif;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

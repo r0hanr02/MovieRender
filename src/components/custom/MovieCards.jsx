@@ -29,11 +29,16 @@ const MovieCard = ({
             src={posterUrl}
             alt={title}
             className="w-full h-full object-cover 
-            onject-center md:object-top"
+            object-center md:object-top"
           />
         ) : (
           <div className="w-full h-full bg-gray-700 flex items-center justify-center text-gray-400 font-bold">
-            🎬 No Image
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BMjE1NTYyNjQxOV5BMl5BanBnXkFtZTcwNDk5NjUzOQ@@._V1_.jpg"
+              alt={title}
+              className="w-full h-full object-cover 
+            object-top"
+            />
           </div>
         )}
       </div>
